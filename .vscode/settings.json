@@ -1,0 +1,9 @@
+{
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestions": {
+        "comments": "inline",
+        "strings": "on"
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "emmet.useInlineCompletions": true
+}

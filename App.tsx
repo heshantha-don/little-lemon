@@ -1,13 +1,15 @@
-import { SafeAreaView, StatusBar, useColorScheme, Text } from 'react-native';
+import { StatusBar, useColorScheme, View} from 'react-native';
+import Onboarding from './screens/Onboarding/Onboarding';
+import globalStyle from './assets/style/globalStyle';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView>
+    <View style={globalStyle.flex}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Text>Hello, World!</Text>
-    </SafeAreaView>
+      <Onboarding />
+    </View>
   );
 };
 
