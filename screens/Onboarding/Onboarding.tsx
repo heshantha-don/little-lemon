@@ -1,4 +1,6 @@
 import { ScrollView, View } from 'react-native';
+import { Routes } from '../../navigation/Routes';
+
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import TextInputField from '../../components/TextInputField/TextInputField';
 import TitleView from '../../components/TitleView/TitleView';
@@ -7,7 +9,7 @@ import ActionButton from '../../components/ActionButton/ActionButton';
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
 
-const Onboarding = () => {
+const Onboarding = ({navigation}) => {
     return (
         <View style={[globalStyle.backgroundColor, globalStyle.flex]}>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[globalStyle.backgroundColor, globalStyle.flex]}>
@@ -29,7 +31,9 @@ const Onboarding = () => {
                     </View>
                 </View>
                 <View style={style.buttonContainer}>
-                    <ActionButton title='Next' onClick={() => {}} />
+                    <ActionButton title='Next' onClick={() => {
+                        navigation.navigate(Routes.Home);
+                    }} />
                 </View>
             </ScrollView>
         </View>
