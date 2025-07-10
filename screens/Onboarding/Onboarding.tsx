@@ -8,31 +8,55 @@ import ActionButton from '../../components/ActionButton/ActionButton';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
+import { FontWeight } from '../../assets/Utils/EnumTypes';
+import { Constance } from '../../assets/Utils/Constance';
+import { TitleType } from '../../assets/Utils/EnumTypes';
 
-const Onboarding = ({navigation}) => {
+const Onboarding = ({ navigation }: { navigation: any }) => {
     return (
         <View style={[globalStyle.backgroundColor, globalStyle.flex]}>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[globalStyle.backgroundColor, globalStyle.flex]}>
-                <LogoHeader />
+                <LogoHeader backgroundColor={'#DEE3E9'} />
                 <View style={style.contentContainer}>
-                    <TitleView title={'Let us get to know you'} />
-                    <View style={style.inputContainer}>
-                        <TextInputField 
-                        title='First Name' 
-                        inputLength={20}
-                        onChangeText={(text) => {console.log(text)}}
-                        />
-                        <TextInputField 
-                        title='Email'
-                        inputLength={20}
-                        keyboardType='email-address' 
-                        onChangeText={(text) => {console.log(text)}}
-                        />
+                    <TitleView title={Constance.LET_US_GET_TO_KNOW_YOU} />
+                    <View>
+                        <View style={style.input}>
+                            <TextInputField 
+                            title={Constance.FIRST_NAME} 
+                            inputLength={20}
+                            fontSize={20}
+                            titleType={TitleType.H2}
+                            borderWidth={2}
+                            height={50}
+                            onChangeText={(text) => {console.log(text)}}
+                            />
+                        </View>
+                        <View style={style.input}>
+                            <TextInputField 
+                            title={Constance.EMAIL}
+                            inputLength={20}
+                            keyboardType='email-address' 
+                            fontSize={20}
+                            titleType={TitleType.H2}
+                            borderWidth={2}
+                            height={50}
+                            onChangeText={(text) => {console.log(text)}}
+                            />
+                        </View>
                     </View>
                 </View>
                 <View style={style.buttonContainer}>
-                    <ActionButton title='Next' onClick={() => {
-                        navigation.navigate(Routes.Home);
+                    <ActionButton 
+                        title = {Constance.NEXT}
+                        color = '#465A69'
+                        backgroundColor = '#CBD2D9'
+                        borderColor = '#83918C'
+                        borderRadius = {10}
+                        fontSize = {28}
+                        fontWeight = {FontWeight.bold}
+                        height = {70}
+                        onClick={() => {
+                        navigation.navigate(Routes.Profile);
                     }} />
                 </View>
             </ScrollView>

@@ -2,9 +2,13 @@ import React from 'react';
 import { SafeAreaView, Image } from 'react-native';
 import { style } from './style';
 
-const LogoHeader = () => {
+type Props = {
+    backgroundColor?: string,
+};
+
+const LogoHeader = ({ backgroundColor = '#RRGGBBAA' } : Props) => {
     return (
-        <SafeAreaView style={style.logoContainer}>
+        <SafeAreaView style={[style.logoContainer, {backgroundColor: backgroundColor}]}>
             <Image 
                 source={require('../../assets/images/Logo.png')} 
                 style={style.logo}

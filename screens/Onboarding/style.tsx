@@ -4,11 +4,11 @@ export const style = StyleSheet.create({
     contentContainer: {
        backgroundColor: '#CBD2D9', 
        flex: 1, 
-       justifyContent: 'space-between',
+       justifyContent: 'space-around',
     },
-    inputContainer: {
-        height: 270, 
-        paddingBottom: 50,
+    input: {
+        marginVertical: 10,
+        marginHorizontal: 30,
     },
     buttonContainer: {
         paddingVertical: 50, 
