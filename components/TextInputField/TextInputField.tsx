@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { View, TextInput, KeyboardTypeOptions } from 'react-native';
 import { style } from './style';
-import TitleView from '../../components/TitleView/TitleView';
+import LabelView from '../LabelView/LabelView';
 import { TitleType } from '../../assets/Utils/EnumTypes';
 
 type Props = {
@@ -27,8 +27,8 @@ const TextInputField = ({title,
                          backgroundColor = '#RRGGBBAA',
                          keyboardType = 'default',
                          fontSize = 12,
-                         titleType = TitleType.H4,
-                         borderWidth = 1,
+                         titleType = TitleType.H6,
+                         borderWidth = 0.4,
                          height = 39,
                          onChangeText} : Props) => {
                             
@@ -43,7 +43,7 @@ const TextInputField = ({title,
     return (
         <View style={style.containter}>
             <View style={style.title}>
-                <TitleView  title={title} 
+                <LabelView  label={title} 
                         color={color}
                         titleType={titleType}  />
             </View>

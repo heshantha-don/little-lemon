@@ -4,8 +4,10 @@ export enum FontWeight {
 };
 
 export enum TitleType {
-    H1 = 25,
-    H2 = 18,
-    H3 = 15,
-    H4 = 11,
+    H1 = 42,
+    H2 = 25,
+    H3 = 18,
+    H4 = 15,
+    H5 = 12.1,
+    H6 = 11,
 };

@@ -3,7 +3,7 @@ import { Routes } from '../../navigation/Routes';
 
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import TextInputField from '../../components/TextInputField/TextInputField';
-import TitleView from '../../components/TitleView/TitleView';
+import LabelView from '../../components/LabelView/LabelView';
 import ActionButton from '../../components/ActionButton/ActionButton';
 
 import globalStyle from '../../assets/style/globalStyle';
@@ -14,18 +14,18 @@ import { TitleType } from '../../assets/Utils/EnumTypes';
 
 const Onboarding = ({ navigation }: { navigation: any }) => {
     return (
-        <View style={[globalStyle.backgroundColor, globalStyle.flex]}>
+        <View style={[{backgroundColor: '#DEE3E9'}, globalStyle.flex]}>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[globalStyle.backgroundColor, globalStyle.flex]}>
                 <LogoHeader backgroundColor={'#DEE3E9'} />
                 <View style={style.contentContainer}>
-                    <TitleView title={Constance.LET_US_GET_TO_KNOW_YOU} />
+                    <LabelView label={Constance.LET_US_GET_TO_KNOW_YOU} />
                     <View>
                         <View style={style.input}>
                             <TextInputField 
                             title={Constance.FIRST_NAME} 
                             inputLength={20}
                             fontSize={20}
-                            titleType={TitleType.H2}
+                            titleType={TitleType.H3}
                             borderWidth={2}
                             height={50}
                             onChangeText={(text) => {console.log(text)}}
@@ -37,7 +37,7 @@ const Onboarding = ({ navigation }: { navigation: any }) => {
                             inputLength={20}
                             keyboardType='email-address' 
                             fontSize={20}
-                            titleType={TitleType.H2}
+                            titleType={TitleType.H3}
                             borderWidth={2}
                             height={50}
                             onChangeText={(text) => {console.log(text)}}
@@ -56,7 +56,7 @@ const Onboarding = ({ navigation }: { navigation: any }) => {
                         fontWeight = {FontWeight.bold}
                         height = {70}
                         onClick={() => {
-                        navigation.navigate(Routes.Profile);
+                        navigation.navigate(Routes.Home);
                     }} />
                 </View>
             </ScrollView>

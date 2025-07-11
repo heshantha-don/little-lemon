@@ -17,4 +17,12 @@ export enum Constance {
     LOG_OUT = 'Log out',
     DISCARD_CHANGES = 'Discard changes',
     SAVE_CHANGES = 'Save changes',
+    BANNER_TITLE = 'Little Lemon',
+    BANNER_SUBTITLE = 'Chicago',
+    BANNER_DESCRIPTION = 'We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.',
+    STARTERS = 'Starters',
+    MAINS = 'Mains',
+    DESSERTS = 'Desserts',
+    DRINKS = 'Drinks',
+    ORDER_FOR_DELIVERY = 'ORDER FOR DELIVERY!',
 };

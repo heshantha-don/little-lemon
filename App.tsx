@@ -1,5 +1,4 @@
 import { StatusBar, useColorScheme, View} from 'react-native';
-import Onboarding from './screens/Onboarding/Onboarding';
 import globalStyle from './assets/style/globalStyle';
 import { NavigationContainer } from '@react-navigation/native';
 import { MainNavigation } from './navigation/MainNavigation';

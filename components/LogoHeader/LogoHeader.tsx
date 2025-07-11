@@ -4,11 +4,12 @@ import { style } from './style';
 
 type Props = {
     backgroundColor?: string,
+    width?: number,
 };
 
-const LogoHeader = ({ backgroundColor = '#RRGGBBAA' } : Props) => {
+const LogoHeader = ({ backgroundColor = '#RRGGBBAA', width = Infinity } : Props) => {
     return (
-        <SafeAreaView style={[style.logoContainer, {backgroundColor: backgroundColor}]}>
+        <SafeAreaView style={[style.logoContainer, {backgroundColor: backgroundColor, width: width}]}>
             <Image 
                 source={require('../../assets/images/Logo.png')} 
                 style={style.logo}

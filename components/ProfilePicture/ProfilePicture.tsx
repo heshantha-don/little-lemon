@@ -1,13 +1,14 @@
-import { Image } from 'react-native';
+import { Image, ImageStyle, StyleProp } from 'react-native';
 import { style } from './style';
 
 type Props = {
-    size?: number,
+    extraStyle?: StyleProp<ImageStyle>;
+    size?: number;
 };
 
-const ProfilePicture = ({size = 50} : Props) => {
+const ProfilePicture = ({size = 50, extraStyle} : Props) => {
     return (<Image 
-        style={[style.picture, {width: size, height: size, borderRadius: size,}]} 
+        style={[style.picture, {width: size, height: size, borderRadius: size,}, extraStyle]} 
         source={require('../../assets/images/Profile.png')} />);
 };
 

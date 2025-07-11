@@ -2,11 +2,19 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
     header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         height: 60,
-        paddingHorizontal: 18,
+        marginHorizontal: 18,
+    },
+    backButton: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+    },
+    profilePic: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
     },
     bodyContainer: {
         borderColor: '#405564',

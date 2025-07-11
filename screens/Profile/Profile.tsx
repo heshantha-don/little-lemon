@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import { SafeAreaView, ScrollView, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import TextInputField from '../../components/TextInputField/TextInputField';
 import ActionButton from '../../components/ActionButton/ActionButton';
 import ProfilePicture from '../../components/ProfilePicture/ProfilePicture';
 import BackButton from '../../components/BackButton/BackButton';
-import TitleView from '../../components/TitleView/TitleView';
+import LabelView from '../../components/LabelView/LabelView';
 import CheckBoxView from '../../components/CheckBoxView/CheckBoxView';
 
 import globalStyle from '../../assets/style/globalStyle';
@@ -22,22 +23,24 @@ const Profile = ({navigation}: { navigation: any}) => {
     const [isSpecialOffers, setIsSpecialOffers] = useState(false);
     const [isNewsletter, setIsNewsletter] = useState(false);
 
-    return (<SafeAreaView style={globalStyle.flex}>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <View style={style.header}>
-                        <BackButton onPress={() => {
-                            navigation.goBack();
+    return (<SafeAreaView style={[globalStyle.flex, globalStyle.backgroundColor]} edges={['top', 'left', 'right']} >
+                <View style={style.header}>
+                    <BackButton 
+                        extraStyle={style.backButton}
+                        onPress={() => {
+                        navigation.goBack();
                         }} />
-                        <LogoHeader />
-                        <ProfilePicture />
-                    </View>
+                    <LogoHeader width={200} />
+                    <ProfilePicture extraStyle={style.profilePic} />
+                </View>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={style.bodyContainer}>
                         <View style={style.personalInfoContainer}>
                             <View style={style.titleContainer}>
-                                <TitleView title={Constance.PERSONAL_INFORMATION} titleType={TitleType.H2} />
+                                <LabelView label={Constance.PERSONAL_INFORMATION} titleType={TitleType.H3} />
                             </View>
                             <View style={style.avatarContainer}>
-                                <TitleView title={Constance.AVATAR} titleType={TitleType.H4} />
+                                <LabelView label={Constance.AVATAR} titleType={TitleType.H6} />
                                 <View style={style.avatarSubContainer}>
                                     <ProfilePicture size={70} />
                                     <View style={style.avatarButton}>
@@ -69,24 +72,24 @@ const Profile = ({navigation}: { navigation: any}) => {
                             </View>
                             <View>
                                 <View style={style.input}>
-                                    <TextInputField title={Constance.FIRST_NAME} />
+                                    <TextInputField title={Constance.FIRST_NAME} placeholder={'Tilly'} />
                                 </View>
                                 <View style={style.input}>
-                                    <TextInputField title={Constance.LAST_NAME} />
+                                    <TextInputField title={Constance.LAST_NAME} placeholder={'Doe'} />
                                 </View>
                                 <View style={style.input}>
                                     <TextInputField title={Constance.EMAIL} 
-                                                    keyboardType={'email-address'} />
+                                                    keyboardType={'email-address'} placeholder={'tillydoe@example.com'} />
                                 </View>
                                 <View style={style.input}>
                                     <TextInputField title={Constance.PHONE_NUMBER} 
-                                                    keyboardType={'phone-pad'} />
+                                                    keyboardType={'phone-pad'} placeholder={'(217) 555-0113'} />
                                 </View>
                             </View>
                         </View>
                         <View style={style.emailInfoContainer}>
                             <View style={style.titleContainer}>
-                                <TitleView title={Constance.EMAIL_NOTIFICATIONS} titleType={TitleType.H3} />
+                                <LabelView label={Constance.EMAIL_NOTIFICATIONS} titleType={TitleType.H4} />
                             </View>
                             <View style={style.checkBoxContainer}>
                                 <CheckBoxView 
