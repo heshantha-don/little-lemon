@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Routes } from './Routes';
-import { Constance } from '../assets/Utils/Constance';
+import { Constance } from '../assets/utils/Constance';
 
 import Home from '../screens/Home/Home';
 import Onboarding from '../screens/Onboarding/Onboarding';
@@ -55,7 +55,7 @@ export const FoodMenuTabsNavigation = () => {
     );
 };
 
-export const MainNavigation = () => {
+export const NavigationStack = () => {
     return (
         <Stack.Navigator
             screenOptions={{header: () => null, headerShown: false}}

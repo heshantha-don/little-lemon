@@ -1,6 +1,6 @@
 import { Pressable, Text } from "react-native";
 import { style } from './style';
-import { FontWeight } from '../../assets/Utils/EnumTypes';
+import { FontWeight } from '../../assets/utils/EnumTypes';
 
 type props = {
     title: string,
@@ -57,7 +57,8 @@ const ActionButton = ({title,
                                               paddingLeft: paddingLeft,
                                               paddingTop: paddingTop,
                                               paddingRight: paddingRight,
-                                              paddingBottom: paddingBottom,}]} onPress={onClick}>
+                                              paddingBottom: paddingBottom,}]} 
+                                              onPress={onClick}>
             <Text style={[style.font, { color: color,
                                         fontWeight: fontWeight, 
                                         fontSize: fontSize,

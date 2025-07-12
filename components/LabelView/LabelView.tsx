@@ -1,6 +1,6 @@
 import { View, Text, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import { style } from './style';
-import { TitleType } from '../../assets/Utils/EnumTypes';
+import { TitleType } from '../../assets/utils/EnumTypes';
 
 type props = {
     extraStyle?: StyleProp<ViewStyle>;

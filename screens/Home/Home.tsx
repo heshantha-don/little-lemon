@@ -8,8 +8,8 @@ import { FoodMenuTabsNavigation } from '../../navigation/MainNavigation';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
-import { Constance } from '../../assets/Utils/Constance';
-import { TitleType } from '../../assets/Utils/EnumTypes';
+import { Constance } from '../../assets/utils/Constance';
+import { TitleType } from '../../assets/utils/EnumTypes';
 import { Routes } from '../../navigation/Routes';
 
 const Home = ({ navigation }: { navigation: any }) => {

@@ -1,18 +1,25 @@
 import { ScrollView, View } from 'react-native';
-import { Routes } from '../../navigation/Routes';
 
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import TextInputField from '../../components/TextInputField/TextInputField';
 import LabelView from '../../components/LabelView/LabelView';
 import ActionButton from '../../components/ActionButton/ActionButton';
+import { useOnboarding } from './useOnboarding';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
-import { FontWeight } from '../../assets/Utils/EnumTypes';
-import { Constance } from '../../assets/Utils/Constance';
-import { TitleType } from '../../assets/Utils/EnumTypes';
+import { FontWeight } from '../../assets/utils/EnumTypes';
+import { Constance } from '../../assets/utils/Constance';
+import { TitleType } from '../../assets/utils/EnumTypes';
 
 const Onboarding = ({ navigation }: { navigation: any }) => {
+
+    const {
+        setFirstName,
+        setEmail,
+        handleSubmit,
+    } = useOnboarding({ navigation });
+
     return (
         <View style={[{backgroundColor: '#DEE3E9'}, globalStyle.flex]}>
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[globalStyle.backgroundColor, globalStyle.flex]}>
@@ -28,7 +35,7 @@ const Onboarding = ({ navigation }: { navigation: any }) => {
                             titleType={TitleType.H3}
                             borderWidth={2}
                             height={50}
-                            onChangeText={(text) => {console.log(text)}}
+                            onChangeText={setFirstName}
                             />
                         </View>
                         <View style={style.input}>
@@ -40,7 +47,7 @@ const Onboarding = ({ navigation }: { navigation: any }) => {
                             titleType={TitleType.H3}
                             borderWidth={2}
                             height={50}
-                            onChangeText={(text) => {console.log(text)}}
+                            onChangeText={setEmail}
                             />
                         </View>
                     </View>
@@ -55,9 +62,7 @@ const Onboarding = ({ navigation }: { navigation: any }) => {
                         fontSize = {28}
                         fontWeight = {FontWeight.bold}
                         height = {70}
-                        onClick={() => {
-                        navigation.navigate(Routes.Home);
-                    }} />
+                        onClick={handleSubmit} />
                 </View>
             </ScrollView>
         </View>

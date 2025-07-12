@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { View, TextInput, KeyboardTypeOptions } from 'react-native';
 import { style } from './style';
 import LabelView from '../LabelView/LabelView';
-import { TitleType } from '../../assets/Utils/EnumTypes';
+import { TitleType } from '../../assets/utils/EnumTypes';
 
 type Props = {
     title: string;

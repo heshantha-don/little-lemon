@@ -1,5 +1,5 @@
 import LabelView from '../LabelView/LabelView';
-import { TitleType } from '../../assets/Utils/EnumTypes';
+import { TitleType } from '../../assets/utils/EnumTypes';
 import { View } from 'react-native';
 import { style } from './style';
 
