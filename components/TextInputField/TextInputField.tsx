@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import { View, TextInput, KeyboardTypeOptions } from 'react-native';
 import { style } from './style';
 import LabelView from '../LabelView/LabelView';
@@ -6,6 +5,7 @@ import { TitleType } from '../../assets/utils/EnumTypes';
 
 type Props = {
     title: string;
+    text?: string;
     inputLength?: number;
     placeholder?: string;
     isSecureEntry?: boolean;
@@ -20,6 +20,7 @@ type Props = {
 };
 
 const TextInputField = ({title, 
+                         text,
                          inputLength = Infinity, 
                          placeholder, 
                          isSecureEntry = false,
@@ -32,11 +33,9 @@ const TextInputField = ({title,
                          height = 39,
                          onChangeText} : Props) => {
                             
-    const [value, setValue] = useState('');
-    const handleChangeText = (text: string) => {
-        if (text.length <= inputLength) {
-            setValue(text);
-            onChangeText?.(text);
+    const handleChangeText = (val: string) => {
+        if (val.length <= inputLength) {
+            onChangeText?.(val);
         };
     };
 
@@ -58,7 +57,7 @@ const TextInputField = ({title,
                          height: height,
                         }]} 
                 onChangeText={handleChangeText} 
-                value={value}
+                value={text}
                 placeholder={placeholder}
                 secureTextEntry={isSecureEntry}
                 keyboardType={keyboardType}

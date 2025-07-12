@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -14,14 +13,32 @@ import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
 import { Constance } from '../../assets/utils/Constance';
 import { TitleType, FontWeight } from '../../assets/utils/EnumTypes';
+import { useProfile } from '../../customHooks/useProfile';
 
 
 
 const Profile = ({navigation}: { navigation: any}) => {
-    const [isOrderStatusesChecked, setIsOrderStatusesChecked] = useState(false);
-    const [isPasswordChanges, setIsPasswordChanges] = useState(false);
-    const [isSpecialOffers, setIsSpecialOffers] = useState(false);
-    const [isNewsletter, setIsNewsletter] = useState(false);
+    const {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        orderStatuses,
+        passwordChanges,
+        specialOffers,
+        newsletter,
+        setFirstName,
+        setLastName,
+        setEmail,
+        setPhoneNumber,
+        setOrderStatuses,
+        setPasswordChanges,
+        setSpecialOffers,
+        setNewsletter,
+        discardChanges,
+        saveChanges,
+        logOutUser,
+    } = useProfile();
 
     return (<SafeAreaView style={[globalStyle.flex, globalStyle.backgroundColor]} edges={['top', 'left', 'right']} >
                 <View style={style.header}>
@@ -72,18 +89,30 @@ const Profile = ({navigation}: { navigation: any}) => {
                             </View>
                             <View>
                                 <View style={style.input}>
-                                    <TextInputField title={Constance.FIRST_NAME} placeholder={'Tilly'} />
+                                    <TextInputField title={Constance.FIRST_NAME} 
+                                                    text={firstName} 
+                                                    placeholder={'Tilly'} 
+                                                    onChangeText={setFirstName} />
                                 </View>
                                 <View style={style.input}>
-                                    <TextInputField title={Constance.LAST_NAME} placeholder={'Doe'} />
+                                    <TextInputField title={Constance.LAST_NAME} 
+                                                    text={lastName} 
+                                                    placeholder={'Doe'} 
+                                                    onChangeText={setLastName} />
                                 </View>
                                 <View style={style.input}>
                                     <TextInputField title={Constance.EMAIL} 
-                                                    keyboardType={'email-address'} placeholder={'tillydoe@example.com'} />
+                                                    keyboardType={'email-address'} 
+                                                    text={email} 
+                                                    placeholder={'tillydoe@example.com'} 
+                                                    onChangeText={setEmail} />
                                 </View>
                                 <View style={style.input}>
                                     <TextInputField title={Constance.PHONE_NUMBER} 
-                                                    keyboardType={'phone-pad'} placeholder={'(217) 555-0113'} />
+                                                    keyboardType={'phone-pad'} 
+                                                    text={phoneNumber} 
+                                                    placeholder={'(217) 555-0113'} 
+                                                    onChangeText={setPhoneNumber} />
                                 </View>
                             </View>
                         </View>
@@ -95,23 +124,23 @@ const Profile = ({navigation}: { navigation: any}) => {
                                 <CheckBoxView 
                                     extraStyle={style.checkBox}
                                     label={Constance.ORDER_STATUSES} 
-                                    value={isOrderStatusesChecked} 
-                                    onValueChange={(val) => {setIsOrderStatusesChecked(val)}} />
+                                    value={orderStatuses} 
+                                    onValueChange={(val) => {setOrderStatuses(val)}} />
                                 <CheckBoxView  
                                     extraStyle={style.checkBox}
                                     label={Constance.PASSWORD_CHANGES} 
-                                    value={isPasswordChanges} 
-                                    onValueChange={(val) => {setIsPasswordChanges(val)}} />
+                                    value={passwordChanges} 
+                                    onValueChange={(val) => {setPasswordChanges(val)}} />
                                 <CheckBoxView  
                                     extraStyle={style.checkBox}
                                     label={Constance.SPECIAL_OFFERS} 
-                                    value={isSpecialOffers} 
-                                    onValueChange={(val) => {setIsSpecialOffers(val)}} />
+                                    value={specialOffers} 
+                                    onValueChange={(val) => {setSpecialOffers(val)}} />
                                 <CheckBoxView  
                                     extraStyle={style.checkBox}
                                     label={Constance.NEWSLETTER} 
-                                    value={isNewsletter} 
-                                    onValueChange={(val) => {setIsNewsletter(val)}} />
+                                    value={newsletter} 
+                                    onValueChange={(val) => {setNewsletter(val)}} />
                             </View>
                         </View>
                     </View>
@@ -126,7 +155,7 @@ const Profile = ({navigation}: { navigation: any}) => {
                             fontSize={14}
                             fontWeight={FontWeight.bold}
                             height = {40}
-                            onClick={() => {}}
+                            onClick={logOutUser}
                         />
                         <View style={style.saveButtonContainer}>
                             <ActionButton 
@@ -140,7 +169,7 @@ const Profile = ({navigation}: { navigation: any}) => {
                                 height = {40}
                                 paddingLeft={16}
                                 paddingRight={16}
-                                onClick={() => {}} />
+                                onClick={discardChanges} />
 
                             <ActionButton 
                                 title={Constance.SAVE_CHANGES}
@@ -154,7 +183,7 @@ const Profile = ({navigation}: { navigation: any}) => {
                                 height = {40}
                                 paddingLeft={16}
                                 paddingRight={16}
-                                onClick={() => {}} />
+                                onClick={saveChanges} />
                         </View>
                     </View>
                 </ScrollView>

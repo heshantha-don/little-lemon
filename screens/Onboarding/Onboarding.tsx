@@ -4,7 +4,7 @@ import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import TextInputField from '../../components/TextInputField/TextInputField';
 import LabelView from '../../components/LabelView/LabelView';
 import ActionButton from '../../components/ActionButton/ActionButton';
-import { useOnboarding } from './useOnboarding';
+import { useOnboarding } from '../../customHooks/useOnboarding';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';

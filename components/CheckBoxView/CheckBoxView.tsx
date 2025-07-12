@@ -11,12 +11,16 @@ type Props = {
 };
 
 const CheckBoxView = ({extraStyle, label, value = false, onValueChange}: Props) => {
+    const handleTap = (val: boolean) => {
+        onValueChange(val);
+    };
+
     return (
-        <Pressable style={[style.container, extraStyle]} onPress={() => onValueChange(!value)}>
+        <Pressable style={[style.container, extraStyle]} onPress={() => handleTap(!value)}>
             <CheckBox
                     style={style.checkBox}
                     value={value}
-                    onValueChange={(val) => onValueChange(val)}
+                    onValueChange={handleTap}
                     boxType={'square'}
                     onFillColor={'#40564F'}
                     onTintColor={'#40564F'}
