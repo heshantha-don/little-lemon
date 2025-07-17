@@ -11,3 +11,10 @@ export enum TitleType {
     H5 = 12.1,
     H6 = 11,
 };
+
+export enum MenuCategories {
+    STARTERS = 'Starters',
+    MAINS = 'Mains',
+    DESSERTS = 'Desserts',
+    DRINKS = 'Drinks',
+};

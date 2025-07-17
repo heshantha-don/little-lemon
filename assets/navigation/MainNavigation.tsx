@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Routes } from './Routes';
-import { Constance } from '../utils/Constance';
+// import { Constance } from '../utils/Constance';
+import { MenuCategories } from '../utils/EnumTypes';
 
 import Home from '../../screens/Home/Home';
 import Onboarding from '../../screens/Onboarding/Onboarding';
@@ -30,29 +31,48 @@ export const FoodMenuTabsNavigation = () => {
                     paddingBottom: 12,
                 },
             }}>
-            <Tab.Screen name={Constance.STARTERS} 
-                        options={{
-                            tabBarLabel: ({ focused }) => <FoodMenuTabTitle title={Constance.STARTERS} isFocused={focused} />
-                        }}
-                        component={FoodMenuTabContent}
+            <Tab.Screen
+                name={MenuCategories.STARTERS}
+                component={FoodMenuTabContent}
+                options={{
+                    tabBarLabel: ({ focused }) => (
+                        <FoodMenuTabTitle title={MenuCategories.STARTERS} isFocused={focused} />
+                    ),
+                }}
+                initialParams={{ category: MenuCategories.STARTERS }}
             />
-            <Tab.Screen name={Constance.MAINS} 
-                        options={{
-                            tabBarLabel: ({ focused }) => <FoodMenuTabTitle title={Constance.MAINS} isFocused={focused} />
-                        }}
-                        component={FoodMenuTabContent}
+
+            <Tab.Screen
+                name={MenuCategories.MAINS}
+                component={FoodMenuTabContent}
+                options={{
+                    tabBarLabel: ({ focused }) => (
+                    <FoodMenuTabTitle title={MenuCategories.MAINS} isFocused={focused} />
+                    ),
+                }}
+                initialParams={{ category: MenuCategories.MAINS }}
             />
-            <Tab.Screen name={Constance.DESSERTS} 
-                        options={{
-                            tabBarLabel: ({ focused }) => <FoodMenuTabTitle title={Constance.DESSERTS} isFocused={focused} />
-                        }}
-                        component={FoodMenuTabContent}
+
+            <Tab.Screen
+                name={MenuCategories.DESSERTS}
+                component={FoodMenuTabContent}
+                options={{
+                    tabBarLabel: ({ focused }) => (
+                    <FoodMenuTabTitle title={MenuCategories.DESSERTS} isFocused={focused} />
+                    ),
+                }}
+                initialParams={{ category: MenuCategories.DESSERTS }}
             />
-            <Tab.Screen name={Constance.DRINKS} 
-                        options={{
-                            tabBarLabel: ({ focused }) => <FoodMenuTabTitle title={Constance.DRINKS} isFocused={focused} />
-                        }}
-                        component={FoodMenuTabContent}
+
+            <Tab.Screen
+                name={MenuCategories.DRINKS}
+                component={FoodMenuTabContent}
+                options={{
+                    tabBarLabel: ({ focused }) => (
+                    <FoodMenuTabTitle title={MenuCategories.DRINKS} isFocused={focused} />
+                    ),
+                }}
+                initialParams={{ category: MenuCategories.DRINKS }}
             />
         </Tab.Navigator>
     );

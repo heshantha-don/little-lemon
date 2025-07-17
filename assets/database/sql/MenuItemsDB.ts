@@ -1,8 +1,9 @@
 import db from './Constance';
 import type { MenuItem } from './Models/MenuItem';
 
-const initMenuTable = () => {
-    db.transaction((tx) => {
+const initMenuTable = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+        db.transaction((tx) => {
         tx.executeSql(
             `CREATE TABLE IF NOT EXISTS menu (
                 id INTEGER PRIMARY KEY NOT NULL,
@@ -10,14 +11,25 @@ const initMenuTable = () => {
                 price REAL,
                 description TEXT,
                 imageUrl TEXT,
-                category TEXT,
-            )`
+                category TEXT
+            )`,
+            [],
+            () => {
+                console.log('Menu table initialized');
+                resolve();
+            },
+            (_, err) => {
+                console.error('Error creating table:', err);
+                reject(err);
+                return false;
+            }
         );
+    });
     });
 };
 
-export const insertMenuItems = (items: MenuItem[]) => {
-    initMenuTable();
+export const insertMenuItems = async (items: MenuItem[]) => {
+    await initMenuTable();
     db.transaction((tx) => {
         items.forEach(item => {
             tx.executeSql(
@@ -29,8 +41,8 @@ export const insertMenuItems = (items: MenuItem[]) => {
     });
 };
 
-export const getMenuItems = () : Promise<MenuItem[]> => {
-    initMenuTable();
+export const getMenuItems = async () : Promise<MenuItem[]> => {
+    await initMenuTable();
     return new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql(

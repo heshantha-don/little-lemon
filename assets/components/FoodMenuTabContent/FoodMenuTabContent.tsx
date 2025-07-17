@@ -1,21 +1,32 @@
 import { useEffect } from 'react';
 import { View, FlatList, Text } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import globalStyle from '../../style/globalStyle';
 import FoodMenuTabCell from '../FoodMenuTabCell/FoodMenuTabCell';
-import { useAppDispatch, useAppSelector } from '../../customHooks/useStore';
 import { fetchAndCacheMenu, loadMenuFromDb } from '../../database/store/menuSlice';
 import ActivityIndicatorView from '../ActivityIndicatorView/ActivityIndicatorView';
+import { MenuCategories } from '../../utils/EnumTypes';
+
+import { useAppDispatch, useAppSelector } from '../../customHooks/useStore';
+import { useMenuItemsByCategory } from '../../customHooks/useMenuItemsByCategory';
 
 const FoodMenuTabContent = () => {
-
+    const route = useRoute();
+    const { category } = route.params as { category: MenuCategories };
     const dispatch = useAppDispatch();
     const { items, loading, error } = useAppSelector((state) => state.menu);
+    const itemsByCategory = useMenuItemsByCategory(items, category);
 
     useEffect(() => {
-        dispatch(loadMenuFromDb()).then((res) => {
-            if(!res.payload) {
-                dispatch(fetchAndCacheMenu());
+        dispatch(loadMenuFromDb())
+        .unwrap()
+        .then(res => {
+            if(res.length === 0) {
+                dispatch(fetchAndCacheMenu())
             }
+        })
+        .catch(err => {
+            console.error('Failed to load menu items', err);
         });
     }, [dispatch]);
 
@@ -25,7 +36,7 @@ const FoodMenuTabContent = () => {
     return (
         <View style={[globalStyle.flex, globalStyle.backgroundColor]}>
             <FlatList
-                data={items}
+                data={itemsByCategory}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <FoodMenuTabCell 

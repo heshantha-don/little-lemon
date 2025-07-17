@@ -20,9 +20,5 @@ export enum Constance {
     BANNER_TITLE = 'Little Lemon',
     BANNER_SUBTITLE = 'Chicago',
     BANNER_DESCRIPTION = 'We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.',
-    STARTERS = 'Starters',
-    MAINS = 'Mains',
-    DESSERTS = 'Desserts',
-    DRINKS = 'Drinks',
     ORDER_FOR_DELIVERY = 'ORDER FOR DELIVERY!',
 };

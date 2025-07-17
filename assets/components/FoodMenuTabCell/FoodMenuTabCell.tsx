@@ -15,7 +15,6 @@ type Props = {
 };
 
 const FoodMenuTabCell = ( {name, price, description, imageUrl} : Props) => {
-    console.log(imageUrl);
     return (
         <View style={style.container}>
             <View style={style.labelContainer}>

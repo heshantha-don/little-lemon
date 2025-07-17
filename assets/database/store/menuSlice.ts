@@ -4,7 +4,7 @@ import { insertMenuItems, getMenuItems } from '../sql/MenuItemsDB';
 
 export const fetchAndCacheMenu = createAsyncThunk('menu/fetchAndCacheMenu', async () => {
     const response = await fetchMenuData();
-    insertMenuItems(response);
+    await insertMenuItems(response);
     return response;
 });
 
