@@ -1,21 +1,19 @@
 import { ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import LogoHeader from '../../components/LogoHeader/LogoHeader';
-import TextInputField from '../../components/TextInputField/TextInputField';
-import ActionButton from '../../components/ActionButton/ActionButton';
-import ProfilePicture from '../../components/ProfilePicture/ProfilePicture';
-import BackButton from '../../components/BackButton/BackButton';
-import LabelView from '../../components/LabelView/LabelView';
-import CheckBoxView from '../../components/CheckBoxView/CheckBoxView';
+import LogoHeader from '../../assets/components/LogoHeader/LogoHeader';
+import TextInputField from '../../assets/components/TextInputField/TextInputField';
+import ActionButton from '../../assets/components/ActionButton/ActionButton';
+import ProfilePicture from '../../assets/components/ProfilePicture/ProfilePicture';
+import BackButton from '../../assets/components/BackButton/BackButton';
+import LabelView from '../../assets/components/LabelView/LabelView';
+import CheckBoxView from '../../assets/components/CheckBoxView/CheckBoxView';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
 import { Constance } from '../../assets/utils/Constance';
 import { TitleType, FontWeight } from '../../assets/utils/EnumTypes';
-import { useProfile } from '../../customHooks/useProfile';
-
-
+import { useProfile } from '../../assets/customHooks/useProfile';
 
 const Profile = ({navigation}: { navigation: any}) => {
     const {

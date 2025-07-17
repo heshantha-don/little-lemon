@@ -1,10 +1,10 @@
 import { ScrollView, View } from 'react-native';
 
-import LogoHeader from '../../components/LogoHeader/LogoHeader';
-import TextInputField from '../../components/TextInputField/TextInputField';
-import LabelView from '../../components/LabelView/LabelView';
-import ActionButton from '../../components/ActionButton/ActionButton';
-import { useOnboarding } from '../../customHooks/useOnboarding';
+import LogoHeader from '../../assets/components/LogoHeader/LogoHeader';
+import TextInputField from '../../assets/components/TextInputField/TextInputField';
+import LabelView from '../../assets/components/LabelView/LabelView';
+import ActionButton from '../../assets/components/ActionButton/ActionButton';
+import { useOnboarding } from '../../assets/customHooks/useOnboarding';
 
 import globalStyle from '../../assets/style/globalStyle';
 import { style } from './style';
