@@ -25,7 +25,7 @@ This is a [**React Native**](https://reactnative.dev) project, bootstrapped usin
 
 This is the final project module of the course, putting all the knowledge I gained to the test. Feel free to check it out and let me know if you’d like to know more about the course! Happy coding, everyone! 🚀
 
-> **Skills:** React Native, React, HTML and CSS, Javascript, TypeScript, JSON, Relational Databases Development, SQL, Figma (Design Software), Application Programming Interface (API), Restful API, UI/UX Strategy, Persona (User Experience), Ideation, Design Research, User Interface and User Experience (UI/UX) Design, Mobile Development, Mobile Development Tools, iOS, Android, User Experience Design, Git (Version Control System), Android Jetpack, GitHub, Node Package Manager, CocoaPods.
+> **Skills:** React Native, React, Redux, Hooks, HTML and CSS, Javascript, TypeScript, Fech, JSON, Relational Databases Development, SQL, Figma (Design Software), Application Programming Interface (API), Restful API, UI/UX Strategy, Persona (User Experience), Ideation, Design Research, User Interface and User Experience (UI/UX) Design, Mobile Development, Mobile Development Tools, iOS, Android, User Experience Design, Git (Version Control System), Android Jetpack, GitHub, Node Package Manager, CocoaPods.
 
 # Screenshots
 
