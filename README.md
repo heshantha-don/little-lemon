@@ -1,71 +1,37 @@
 This is a [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Meta React Native Specialization | Capstone Little Lemon Project
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+> I recently brushed up on my React Native skills, and it was really fun and super useful!
 
-## Step 1: Start Metro
+**The course included the following certificates:**
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+[Introduction to Mobile Development](https://www.coursera.org/account/accomplishments/certificate/5USAQH2B9SFA)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+[Programming with JavaScript](https://www.coursera.org/account/accomplishments/certificate/P4HFOGQV07OJ)
 
-```sh
-# Using npm
-npm start
+[Version Control](https://www.coursera.org/account/accomplishments/certificate/9Y9LNA2R57S7)
 
-# OR using Yarn
-yarn start
-```
+[React Basics](https://www.coursera.org/account/accomplishments/certificate/L62IWQ5JV05L)
 
-## Step 2: Build and run your app
+[React Native](https://www.coursera.org/account/accomplishments/certificate/YE7FNGT1AHBL)
 
-With Metro running, open a new terminal window/pane from the root of the React Native project, and use one of the following commands to build and run your Android or iOS app:
+[Working with Data](https://www.coursera.org/account/accomplishments/certificate/Q58OZXISZ85L)
 
-### Android
+[Principles of UX/UI Design](https://www.coursera.org/account/accomplishments/certificate/65MEBG7QJ9L1)
 
-```sh
-# Using npm
-npm run android
+[Capstone (React App)](https://www.coursera.org/account/accomplishments/certificate/10UWPYW4R91Z)
 
-# OR using Yarn
-yarn android
-```
 
-### iOS
+This is the final project module of the course, putting all the knowledge I gained to the test. Feel free to check it out and let me know if you’d like to know more about the course! Happy coding, everyone! 🚀
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+> **Skills:** React Native, React, HTML and CSS, Javascript, TypeScript, JSON, Relational Databases Development, SQL, Figma (Design Software), Application Programming Interface (API), Restful API, UI/UX Strategy, Persona (User Experience), Ideation, Design Research, User Interface and User Experience (UI/UX) Design, Mobile Development, Mobile Development Tools, iOS, Android, User Experience Design, Git (Version Control System), Android Jetpack, GitHub, Node Package Manager, CocoaPods.
 
-Ruby bundler to install CocoaPods itself:
+# Screenshots
 
-```sh
-bundle install
-```
+![Capstone](https://github.com/user-attachments/assets/9bebafbb-b363-4cf5-93cf-76b08bca6cce)
 
-Then, run:
 
-```sh
-bundle exec pod install
-```
+# Certificate
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your the app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run this app — you can also build it directly from Android Studio or Xcode.
-
-## Congratulations! :tada:
-
-You've successfully run this React Native App. :partying_face:
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+![Coursera 84JA2LSV3B2E](https://github.com/user-attachments/assets/f8e790cd-a5a7-440a-9e0b-92c77c4729dd)
